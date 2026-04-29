@@ -69,7 +69,7 @@ class Reservation:
         start_at: datetime,
         end_at: datetime,
         timezone: str,
-    ) -> "Reservation":
+    ) -> Reservation:
         normalized_start = start_at.astimezone(UTC)
         normalized_end = end_at.astimezone(UTC)
         return cls(
@@ -99,7 +99,7 @@ class Reservation:
         status: ReservationStatus,
         created_at: datetime,
         canceled_at: datetime | None,
-    ) -> "Reservation":
+    ) -> Reservation:
         return cls(
             id=id,
             room_id=room_id,

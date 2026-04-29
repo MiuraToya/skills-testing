@@ -18,11 +18,11 @@ class Room:
         self._validate_invariants()
 
     @classmethod
-    def create(cls, name: str, capacity: int) -> "Room":
+    def create(cls, name: str, capacity: int) -> Room:
         return cls(id=0, name=name, capacity=capacity, _internal=True)
 
     @classmethod
-    def reconstruct(cls, id: int, name: str, capacity: int) -> "Room":
+    def reconstruct(cls, id: int, name: str, capacity: int) -> Room:
         return cls(id=id, name=name, capacity=capacity, _internal=True)
 
     def _validate_invariants(self) -> None:
