@@ -31,6 +31,16 @@ uv run alembic upgrade head
 uv run uvicorn app.main:app --reload
 ```
 
+## テスト実行
+
+```bash
+# テスト依存をインストール
+uv sync --group test
+
+# 統合テストを実行（テスト用DBコンテナが自動で立ち上がる）
+uv run pytest
+```
+
 ## 主なエンドポイント
 
 ### 会議室作成

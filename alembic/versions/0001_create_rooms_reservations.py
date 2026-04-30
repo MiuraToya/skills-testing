@@ -1,6 +1,6 @@
 """create rooms and reservations
 
-Revision ID: 0001_create_rooms_and_reservations
+Revision ID: 0001_create_rooms_reservations
 Revises: None
 Create Date: 2026-04-30 00:00:00.000000
 """
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = "0001_create_rooms_and_reservations"
+revision: str = "0001_create_rooms_reservations"
 down_revision: str | None = None
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
