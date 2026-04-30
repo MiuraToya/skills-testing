@@ -1,5 +1,5 @@
 ---
-name: deterministic-testing-with-pytest
+name: software-testing
 description: 任意の言語・フレームワークのプロジェクトで、自動テストを決定論的に設計・実装・改善するスキル。テスト戦略（ピラミッド/ダイヤモンド）の選定、テストコードの設計、実装が必要なときに使用する。
 ---
 
