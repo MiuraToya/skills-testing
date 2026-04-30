@@ -29,6 +29,10 @@ class ReservationRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def update(self, reservation: Reservation) -> Reservation:
+        raise NotImplementedError
+
+    @abstractmethod
     def list_by_room_and_range(
         self, room_id: int, start_at: datetime, end_at: datetime
     ) -> list[Reservation]:

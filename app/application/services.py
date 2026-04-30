@@ -22,8 +22,8 @@ class RoomService:
             raise ValidationError(str(exc)) from exc
 
         with self._uow as uow:
-            created = uow.rooms.add(room)
             try:
+                created = uow.rooms.add(room)
                 uow.commit()
             except IntegrityError as exc:
                 uow.rollback()
@@ -91,5 +91,6 @@ class ReservationService:
             except ReservationRuleError as exc:
                 raise ValidationError(str(exc)) from exc
 
+            updated = uow.reservations.update(reservation)
             uow.commit()
-            return reservation
+            return updated

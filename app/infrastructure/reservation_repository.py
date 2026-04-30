@@ -62,6 +62,19 @@ class SqlAlchemyReservationRepository(ReservationRepository):
             return None
         return _to_reservation_domain(model)
 
+    def update(self, reservation: Reservation) -> Reservation:
+        model = self._session.get(ReservationModel, reservation.id)
+        if model is None:
+            raise ValueError(f"Reservation {reservation.id} not found.")
+        model.guest_name = reservation.guest_name
+        model.attendee_count = reservation.attendee_count
+        model.start_at = reservation.start_at
+        model.end_at = reservation.end_at
+        model.status = reservation.status
+        model.canceled_at = reservation.canceled_at
+        self._session.flush()
+        return _to_reservation_domain(model)
+
     def list_by_room_and_range(
         self, room_id: int, start_at: datetime, end_at: datetime
     ) -> list[Reservation]:
